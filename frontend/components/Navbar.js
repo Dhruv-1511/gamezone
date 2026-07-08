@@ -44,7 +44,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-inner">
         <Link href="/">
-          <div className="logo">🎮 Game<span>Zone</span></div>
+          <img src="/logo.png" alt="GameZone Logo" className="logo-img" />
         </Link>
 
         <form className="search-form" onSubmit={handleSearch}>
