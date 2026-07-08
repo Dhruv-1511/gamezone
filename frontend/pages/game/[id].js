@@ -6,7 +6,7 @@ import Navbar from '../../components/Navbar'
 import GameCard from '../../components/GameCard'
 import AdBanner from '../../components/AdBanner'
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || (process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8000')
 
 export default function GamePage() {
   const router = useRouter()
