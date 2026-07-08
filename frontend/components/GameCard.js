@@ -14,7 +14,7 @@ export default function GameCard({ game }) {
           loading="lazy"
         />
         <div className="game-card-play">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
         </div>
         <div className="game-card-info">
           <div className="game-card-title">{game.title}</div>

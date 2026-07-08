@@ -164,12 +164,6 @@ export default function HomePage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      {syncStatus !== null && !dbEmpty && (
-        <div style={{ background: '#3b82f6', color: 'white', textAlign: 'center', padding: '8px', fontSize: '13px' }}>
-          ⏳ Fetching new games in background... {syncStatus} imported so far.
-        </div>
-      )}
-
       <Navbar />
 
       {/* Top Banner Ads */}
@@ -185,13 +179,13 @@ export default function HomePage() {
               onClick={() => setCategory(cat.id)}
               style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
             >
-              {cat.icon} {cat.name}
+              {cat.icon && <span aria-hidden="true">{cat.icon}</span>} {cat.name}
             </button>
           ))}
         </div>
       </div>
       <div className="homepage-layout">
-        <div className="homepage-main">
+        <main className="homepage-main">
           <div className="page-container">
             {dbEmpty ? (
               <div style={{ textAlign: 'center', padding: '100px 20px' }}>
@@ -267,7 +261,7 @@ export default function HomePage() {
               </>
             )}
           </div>
-        </div>
+        </main>
         
         {!dbEmpty && (
           <div className="ad-sidebar">
