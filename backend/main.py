@@ -6,8 +6,11 @@ import asyncio
 import httpx
 from contextlib import asynccontextmanager
 
+import os
+
 def get_db():
-    conn = sqlite3.connect("games.db")
+    db_path = "/tmp/games.db" if os.getenv("VERCEL") else "games.db"
+    conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     return conn
 
