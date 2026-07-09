@@ -16,14 +16,6 @@ const nextConfig = {
       },
     ]
   },
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: '/api',
-      },
-    ]
-  },
 }
 
 module.exports = nextConfig
