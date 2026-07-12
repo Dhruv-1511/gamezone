@@ -125,7 +125,8 @@ async def fetch_gamemonetize_data(force=False):
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
-    asyncio.create_task(fetch_gamemonetize_data())
+    # Games are only fetched via the /fetch-games admin page.
+    # Do NOT auto-fetch here — the DB persists across restarts.
     yield
 
 app = FastAPI(title="Game Platform API", lifespan=lifespan)

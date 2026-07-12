@@ -2,15 +2,19 @@ import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import Navbar from '../../components/Navbar'
 import GameCard from '../../components/GameCard'
 import AdBanner from '../../components/AdBanner'
+import Footer from '../../components/Footer'
+import { idFromSlug, gameSlug } from '../../utils/slug'
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || (process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8000')
 
 export default function GamePage() {
   const router = useRouter()
-  const { id } = router.query
+  // slug format: "idle-restaurant-tale-60800"
+  const { slug } = router.query
   const iframeRef = useRef(null)
 
   const [game, setGame] = useState(null)
@@ -18,19 +22,29 @@ export default function GamePage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if (!id) return
-    fetchGame()
+    if (!slug) return
+    const id = idFromSlug(slug)
+    fetchGame(id)
     fetchRelated()
-  }, [id])
+  }, [slug])
 
-  async function fetchGame() {
+  async function fetchGame(id) {
     setLoading(true)
     try {
       const res = await fetch(`${API_BASE}/api/games/${id}`)
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
       const data = await res.json()
       setGame(data)
+
+      // If someone opens /game/60800 (old ID-only URL), redirect to the canonical slug URL
+      if (data && !data.error) {
+        const canonical = gameSlug(data)
+        if (slug !== canonical) {
+          router.replace(`/game/${canonical}`, undefined, { shallow: false })
+        }
+      }
     } catch (err) {
-      console.error(err)
+      // silently handle
     }
     setLoading(false)
   }
@@ -38,10 +52,11 @@ export default function GamePage() {
   async function fetchRelated() {
     try {
       const res = await fetch(`${API_BASE}/api/featured`)
+      if (!res.ok) return
       const data = await res.json()
       setRelated(data)
     } catch (err) {
-      console.error(err)
+      // silently handle
     }
   }
 
@@ -79,8 +94,27 @@ export default function GamePage() {
   return (
     <>
       <Head>
-        <title>{game.title} - GameZone</title>
-        <meta name="description" content={game.description} />
+        <title>{game.title} - GameBlasts</title>
+        <meta name="description" content={game.description?.slice(0, 160) || `Play ${game.title} for free online. No download required.`} />
+        <meta name="keywords" content={game.tags || game.category} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={`${game.title} - GameBlasts`} />
+        <meta property="og:description" content={game.description?.slice(0, 200) || `Play ${game.title} free online on GameBlasts.`} />
+        <meta property="og:image" content={game.thumb} />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="384" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://gameblasts.com/game/${gameSlug(game)}`} />
+        <meta property="og:site_name" content="GameBlasts" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${game.title} - GameBlasts`} />
+        <meta name="twitter:description" content={game.description?.slice(0, 160) || `Play ${game.title} free online.`} />
+        <meta name="twitter:image" content={game.thumb} />
+
+        <link rel="canonical" href={`https://gameblasts.com/game/${gameSlug(game)}`} />
       </Head>
 
       <Navbar />
@@ -151,9 +185,17 @@ export default function GamePage() {
           </div>
           <div className="related-scroll">
             {related.map(g => (
-              <Link href={`/game/${g.id}`} key={g.id}>
+              <Link href={`/game/${gameSlug(g)}`} key={g.id}>
                 <div className="related-card">
-                  <img src={g.thumb} alt={g.title} />
+                  <Image
+                    src={g.thumb}
+                    alt={g.title}
+                    fill
+                    sizes="160px"
+                    style={{ objectFit: 'cover' }}
+                    loading="lazy"
+                    unoptimized={false}
+                  />
                   <p>{g.title}</p>
                 </div>
               </Link>
@@ -161,7 +203,7 @@ export default function GamePage() {
           </div>
         </div>
       )}
+      <Footer />
     </>
   )
 }
-

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const router = useRouter();
@@ -59,7 +60,15 @@ export default function Navbar() {
       <div className="navbar-inner">
         {/* Logo */}
         <Link href="/" className="navbar-logo">
-          <img src="/logo.png" alt="GameBlast Logo" className="logo-img" />
+          <Image
+            src="/logo.png"
+            alt="GameBlast Logo"
+            width={266}
+            height={63}
+            priority
+            fetchpriority="high"
+            className="logo-img"
+          />
         </Link>
 
         {/* Desktop search */}
