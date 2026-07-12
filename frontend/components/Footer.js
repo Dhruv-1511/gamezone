@@ -2,14 +2,16 @@ import Link from "next/link";
 import Image from "next/image";
 
 const CATEGORIES = [
-  { id: "action", name: "Action" },
-  { id: "adventure", name: "Adventure" },
-  { id: "arcade", name: "Arcade" },
-  { id: "puzzle", name: "Puzzle" },
-  { id: "racing", name: "Racing" },
-  { id: "sports", name: "Sports" },
-  { id: "2player", name: "2 Player" },
-  { id: "shooting", name: "Shooting" },
+  { id: "action",    name: "Action",    href: "/action-games" },
+  { id: "adventure", name: "Adventure", href: "/adventure-games" },
+  { id: "arcade",   name: "Arcade",    href: "/arcade-games" },
+  { id: "puzzle",   name: "Puzzle",    href: "/puzzle-games" },
+  { id: "racing",   name: "Racing",    href: "/racing-games" },
+  { id: "sports",   name: "Sports",    href: "/sports-games" },
+  { id: "2player",  name: "2 Player",  href: "/2-player-games" },
+  { id: "shooting", name: "Shooting",  href: "/shooting-games" },
+  { id: "strategy", name: "Strategy",  href: "/strategy-games" },
+  { id: "girls",    name: "Girls",     href: "/girls-games" },
 ];
 
 export default function Footer() {
@@ -41,12 +43,10 @@ export default function Footer() {
         <div className="footer-col">
           <h4 className="footer-col-title">Quick Links</h4>
           <ul className="footer-links">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/?category=all">All Games</Link>
-            </li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/">All Games</Link></li>
+            <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+            <li><Link href="/terms-and-conditions">Terms &amp; Conditions</Link></li>
           </ul>
         </div>
 
@@ -56,7 +56,7 @@ export default function Footer() {
           <ul className="footer-links two-col">
             {CATEGORIES.map((cat) => (
               <li key={cat.id}>
-                <Link href={`/?category=${cat.id}`}>{cat.name}</Link>
+                <Link href={cat.href}>{cat.name}</Link>
               </li>
             ))}
           </ul>

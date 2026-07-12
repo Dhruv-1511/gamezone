@@ -9,6 +9,9 @@ export async function getServerSideProps({ res }) {
 Allow: /
 
 Disallow: /api/
+Disallow: /sitemap-games.xml
+Disallow: /sitemap-categories.xml
+Disallow: /sitemap-pages.xml
 
 Sitemap: ${SITE_URL}/sitemap.xml`
 
