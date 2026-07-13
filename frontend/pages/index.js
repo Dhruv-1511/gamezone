@@ -155,19 +155,21 @@ export default function HomePage({ initialGames, initialTotal, initialPages, ini
   return (
     <>
       <Head>
-        <title>Play Free Online Games - No Download or Login | GameBlasts</title>
-        <meta name="description" content="Play 2,000+ free online games instantly on GameBlasts. Enjoy action, racing, puzzle, shooting, sports and multiplayer browser games with no download or login required." />
-        <meta name="keywords" content="free online games, play free online games, browser games, free browser games, online games no download, free games no login, instant play games, games online" />
+        <title>Free Online Games - Play Best PC Games, Browser Games | GameBlasts</title>
+        <meta name="description" content="Best place to play free online games on PC, Desktop and Mobile Browser. Trusted by 1000s of Players. No Download Needed. 100% Safe. Play Now!" />
+        <meta name="keywords" content="free online games, play free online games, browser games, free browser games, online games no download, free games no login, instant play games, PC games online" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Play Free Online Games - No Download or Login | GameBlasts" />
-        <meta property="og:description" content="Play 2,000+ free online games instantly on GameBlasts. Action, racing, puzzle, shooting, sports — no download or login required." />
+        <meta property="og:title" content="Free Online Games - Play Best PC Games, Browser Games | GameBlasts" />
+        <meta property="og:description" content="Best place to play free online games on PC, Desktop and Mobile Browser. No Download Needed. 100% Safe. Trusted by 1000s of Players." />
         <meta property="og:image" content="https://gameblasts.com/logo.png" />
+        <meta property="og:image:width" content="1266" />
+        <meta property="og:image:height" content="300" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://gameblasts.com/" />
         <meta property="og:site_name" content="GameBlasts" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Play Free Online Games - No Download or Login | GameBlasts" />
-        <meta name="twitter:description" content="Play 2,000+ free online games instantly. No download or login required." />
+        <meta name="twitter:title" content="Free Online Games - Play Best PC Games, Browser Games | GameBlasts" />
+        <meta name="twitter:description" content="Best place to play free online games on PC, Desktop and Mobile Browser. No Download Needed. 100% Safe. Play Now!" />
         <meta name="twitter:image" content="https://gameblasts.com/logo.png" />
         <link rel="canonical" href="https://gameblasts.com/" />
       </Head>
@@ -197,7 +199,7 @@ export default function HomePage({ initialGames, initialTotal, initialPages, ini
         <main className="homepage-main">
           <div className="page-container">
 
-            {dbEmpty ? (
+            {(dbEmpty && syncStatus !== null) ? (
               <div style={{ textAlign: 'center', padding: '100px 20px' }}>
                 <h2 style={{ color: '#e94560', marginBottom: '16px' }}>⚙️ Syncing Games...</h2>
                 {syncStatus !== null && (
@@ -213,7 +215,7 @@ export default function HomePage({ initialGames, initialTotal, initialPages, ini
                 {/* SEO Hero — visible on default homepage only, crawlable by Google */}
                 {isDefaultView && (
                   <div className="homepage-hero-text">
-                    <h1 className="homepage-h1">Play Free Online Games — No Download or Login</h1>
+                    <h1 className="homepage-h1">Play Free Online Games - No Download or Login Required</h1>
                     <p className="homepage-intro">
                       Play free online games instantly on GameBlasts. Explore 2,000+ browser games including action, racing, puzzle, shooting, sports, arcade and 2 player games. No downloads, no installation and no login required. Just choose a game and start playing.
                     </p>

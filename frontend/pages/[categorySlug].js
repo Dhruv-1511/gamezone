@@ -15,12 +15,12 @@ const CATEGORY_META = {
     title: 'Free Action Games - Play Online No Download | GameBlasts',
     h1: 'Free Action Games Online',
     metaDescription: 'Play free action games online on GameBlasts. Fight enemies, complete missions and enjoy thrilling browser action games with no download or login required.',
-    intro: 'Get your adrenaline pumping with GameBlasts\' collection of free action games. From intense combat games to side-scrolling adventures, our action category delivers non-stop excitement directly in your browser. Battle powerful enemies, complete challenging missions and unlock new levels — all without downloading anything or creating an account.',
+    intro: 'Get your adrenaline pumping with GameBlasts\' collection of free action games. From intense combat games to side-scrolling adventures, our action category delivers non-stop excitement directly in your browser. Battle powerful enemies, complete challenging missions and unlock new levels, all without downloading anything or creating an account.',
     keywords: 'free action games, action games online, browser action games, action games no download, play action games free',
     about: {
       what: 'Action games are fast-paced games that challenge your reflexes, coordination and reaction time. They typically involve combat, obstacles and enemies that you must defeat or avoid. Popular sub-genres include beat-em-ups, platformers, hack-and-slash games and action-adventure hybrids.',
       best: 'GameBlasts hosts hundreds of action games ranging from classic arcade fighters to modern 3D combat games. Some of the most popular include superhero games, ninja games and intense battle games that keep players engaged for hours.',
-      mobile: 'Yes! Most of our action games are fully mobile-friendly and work on smartphones and tablets. Just open GameBlasts in your mobile browser — no app download needed.',
+      mobile: 'Yes! Most of our action games are fully mobile-friendly and work on smartphones and tablets. Just open GameBlasts in your mobile browser, no app download needed.',
       free: 'Absolutely. Every action game on GameBlasts is 100% free to play with no hidden charges, no in-app purchases required to enjoy the full experience.',
     },
     faqs: [
@@ -37,7 +37,7 @@ const CATEGORY_META = {
     title: 'Free Adventure Games - Play Online No Download | GameBlasts',
     h1: 'Free Adventure Games Online',
     metaDescription: 'Play free adventure games online on GameBlasts. Explore worlds, solve quests and enjoy exciting browser adventure games with no download or login required.',
-    intro: 'Embark on epic quests with GameBlasts\' collection of free adventure games. Explore mysterious worlds, discover hidden secrets, solve challenging puzzles and complete thrilling storylines — all directly in your browser. No installation, no login, just pure adventure.',
+    intro: 'Embark on epic quests with GameBlasts\' collection of free adventure games. Explore mysterious worlds, discover hidden secrets, solve challenging puzzles and complete thrilling storylines, all directly in your browser. No installation, no login, just pure adventure.',
     keywords: 'free adventure games, adventure games online, browser adventure games, adventure games no download, play adventure games free',
     about: {
       what: 'Adventure games focus on exploration, storytelling and puzzle-solving. Players typically navigate vast worlds, interact with characters and complete quests. Sub-genres include point-and-click adventures, RPG-adventure hybrids and exploration games.',
@@ -46,7 +46,7 @@ const CATEGORY_META = {
       free: 'Every adventure game on GameBlasts is 100% free with no hidden costs.',
     },
     faqs: [
-      { q: 'Are the adventure games on GameBlasts free?', a: 'Yes, all adventure games are completely free to play — no payment or subscription needed.' },
+      { q: 'Are the adventure games on GameBlasts free?', a: 'Yes, all adventure games are completely free to play, no payment or subscription needed.' },
       { q: 'Do I need to download adventure games?', a: 'No. All games run in your browser with zero downloads.' },
       { q: 'Can I play adventure games on mobile?', a: 'Yes, many adventure games are mobile-compatible and work in your mobile browser.' },
       { q: 'What types of adventure games are available?', a: 'GameBlasts has quest games, exploration games, escape rooms, RPG adventures and story games.' },
@@ -59,18 +59,18 @@ const CATEGORY_META = {
     title: 'Free Arcade Games - Play Online No Download | GameBlasts',
     h1: 'Free Arcade Games Online',
     metaDescription: 'Play free arcade games online on GameBlasts. Enjoy classic and modern arcade games in your browser with no download or login required.',
-    intro: 'Relive the golden age of gaming with GameBlasts\' collection of free arcade games. From classic high-score chasers to modern browser-based arcade experiences, our collection has something for everyone. Tap, click and swipe your way to the top of the leaderboard — instantly, for free.',
+    intro: 'Relive the golden age of gaming with GameBlasts\' collection of free arcade games. From classic high-score chasers to modern browser-based arcade experiences, our collection has something for everyone. Tap, click and swipe your way to the top of the leaderboard, instantly, for free.',
     keywords: 'free arcade games, arcade games online, browser arcade games, classic arcade games online, play arcade games free',
     about: {
       what: 'Arcade games are typically short, fast and highly replayable games designed around scoring mechanics. Originating from the arcade cabinets of the 1970s–90s, modern browser arcade games capture that same addictive loop of "one more try".',
       best: 'Our arcade collection includes endless runners, clicker games, ball games, retro-style shooters and more that deliver instant fun.',
       mobile: 'Yes, most arcade games are designed for quick sessions and work perfectly on mobile browsers.',
-      free: 'All arcade games on GameBlasts are completely free — no coins required!',
+      free: 'All arcade games on GameBlasts are completely free, no coins required!',
     },
     faqs: [
-      { q: 'Are the arcade games on GameBlasts free?', a: 'Yes, all arcade games are 100% free — just like the classic arcade experience, minus the quarters.' },
+      { q: 'Are the arcade games on GameBlasts free?', a: 'Yes, all arcade games are 100% free, just like the classic arcade experience, minus the quarters.' },
       { q: 'Do I need to download arcade games?', a: 'No downloads needed. All games load instantly in your browser.' },
-      { q: 'Can I play arcade games on mobile?', a: 'Yes! Arcade games are great on mobile — pick up and play any time.' },
+      { q: 'Can I play arcade games on mobile?', a: 'Yes! Arcade games are great on mobile, pick up and play any time.' },
       { q: 'Are there multiplayer arcade games?', a: 'Yes, some arcade games on GameBlasts support 2-player modes. Check the 2 Player category for more.' },
       { q: 'Do I need to sign up?', a: 'No sign-up, no login, no registration. Just play.' },
     ],
@@ -80,20 +80,20 @@ const CATEGORY_META = {
     name: 'Puzzle',
     title: 'Free Puzzle Games - Play Online No Download | GameBlasts',
     h1: 'Free Puzzle Games Online',
-    metaDescription: 'Play free puzzle games online on GameBlasts. Challenge your brain with logic puzzles, word games and more — no download or login required.',
-    intro: 'Exercise your mind with GameBlasts\' collection of free puzzle games. From brain-teasing logic challenges to relaxing match-3 games, our puzzle collection offers something for every difficulty level. Challenge yourself, improve your thinking and have fun — all directly in your browser with no download needed.',
+    metaDescription: 'Play free puzzle games online on GameBlasts. Challenge your brain with logic puzzles, word games and more. No download or login required.',
+    intro: 'Exercise your mind with GameBlasts\' collection of free puzzle games. From brain-teasing logic challenges to relaxing match-3 games, our puzzle collection offers something for every difficulty level. Challenge yourself, improve your thinking and have fun, all directly in your browser with no download needed.',
     keywords: 'free puzzle games, puzzle games online, brain games online, logic games free, puzzle games no download',
     about: {
       what: 'Puzzle games challenge your problem-solving, logic and spatial reasoning skills. They range from quick casual brain teasers to complex multi-step logic challenges. Sub-genres include match-3 games, sliding puzzles, word games and physics-based puzzles.',
       best: 'Our puzzle collection includes Sudoku, maze games, colour puzzles, word challenges and innovative logic games that range from easy to extremely challenging.',
-      mobile: 'Yes! Puzzle games are perfect for mobile play — enjoy a brain workout on the go.',
+      mobile: 'Yes! Puzzle games are perfect for mobile play, enjoy a brain workout on the go.',
       free: 'Every puzzle game on GameBlasts is completely free to play.',
     },
     faqs: [
       { q: 'Are the puzzle games on GameBlasts free?', a: 'Yes, all puzzle games are free with no purchase required.' },
       { q: 'Do I need to download puzzle games?', a: 'No downloads. All puzzle games run in your browser.' },
       { q: 'Can I play puzzle games on mobile?', a: 'Yes, puzzle games are great on mobile and most are touch-optimised.' },
-      { q: 'What difficulty levels are available?', a: 'GameBlasts has puzzle games for all skill levels — from beginner to expert.' },
+      { q: 'What difficulty levels are available?', a: 'GameBlasts has puzzle games for all skill levels, from beginner to expert.' },
       { q: 'Do I need an account to save progress?', a: 'No account is needed. Note that progress may reset between sessions.' },
     ],
   },
@@ -103,13 +103,13 @@ const CATEGORY_META = {
     title: 'Free Racing Games - Play Online No Download | GameBlasts',
     h1: 'Free Racing Games Online',
     metaDescription: 'Play free racing games online on GameBlasts. Drive fast cars, race against opponents and enjoy browser racing games with no download or login required.',
-    intro: 'Put the pedal to the metal with GameBlasts\' collection of free racing games. Choose from high-speed car racing, motorbike games, kart racing and off-road adventures. Compete against opponents, beat your lap times and unlock faster vehicles — all in your browser with no download required.',
+    intro: 'Put the pedal to the metal with GameBlasts\' collection of free racing games. Choose from high-speed car racing, motorbike games, kart racing and off-road adventures. Compete against opponents, beat your lap times and unlock faster vehicles, all in your browser with no download required.',
     keywords: 'free racing games, racing games online, car games online, browser racing games, racing games no download, free car racing',
     about: {
       what: 'Racing games challenge players to navigate tracks as fast as possible while managing obstacles, competitors and vehicle handling. Sub-genres include kart racing, realistic simulators, arcade racers, motorbike games and street racing games.',
       best: 'Our racing collection includes everything from realistic 3D car games to fun cartoon kart racers, as well as bike games, drift challenges and time trial events.',
       mobile: 'Yes! Many racing games on GameBlasts work on mobile browsers. Use touch controls to steer and accelerate.',
-      free: 'All racing games are completely free — no purchase required to race.',
+      free: 'All racing games are completely free, no purchase required to race.',
     },
     faqs: [
       { q: 'Are the racing games on GameBlasts free?', a: 'Yes, all racing games are 100% free to play.' },
@@ -124,14 +124,14 @@ const CATEGORY_META = {
     name: 'Sports',
     title: 'Free Sports Games - Play Online No Download | GameBlasts',
     h1: 'Free Sports Games Online',
-    metaDescription: 'Play free sports games online on GameBlasts. Football, basketball, golf and more — browser sports games with no download or login required.',
-    intro: 'Compete in your favourite sports from the comfort of your browser with GameBlasts\' free sports games collection. Kick footballs, shoot hoops, sink putts and score goals — all online, all free, with no download or sign-up required.',
+    metaDescription: 'Play free sports games online on GameBlasts. Football, basketball, golf and more. Browser sports games with no download or login required.',
+    intro: 'Compete in your favourite sports from the comfort of your browser with GameBlasts\' free sports games collection. Kick footballs, shoot hoops, sink putts and score goals, all online, all free, with no download or sign-up required.',
     keywords: 'free sports games, sports games online, football games online, basketball games browser, sports games no download',
     about: {
       what: 'Sports games simulate real-world athletic competitions in digital form. From football and basketball to golf and tennis, browser sports games let you compete across dozens of disciplines without leaving your seat.',
       best: 'Our sports collection includes football, basketball, baseball, golf, tennis, bowling and many more sports recreated as fun browser games.',
       mobile: 'Yes, many sports games are optimised for mobile and work with touch controls.',
-      free: 'Every sports game on GameBlasts is free — no premium subscription needed.',
+      free: 'Every sports game on GameBlasts is free, no premium subscription needed.',
     },
     faqs: [
       { q: 'Are the sports games on GameBlasts free?', a: 'Yes, all sports games are completely free to play.' },
@@ -147,13 +147,13 @@ const CATEGORY_META = {
     title: 'Free 2 Player Games - Play Online No Download | GameBlasts',
     h1: 'Free 2 Player Games Online',
     metaDescription: 'Play free 2 player games online on GameBlasts. Challenge a friend on the same device and enjoy multiplayer browser games with no download required.',
-    intro: 'Challenge your friends and family with GameBlasts\' collection of free 2 player games. Share a keyboard, compete side-by-side and settle the score in dozens of exciting two-player browser games. No download, no app, no login — just open a game and go head to head instantly.',
+    intro: 'Challenge your friends and family with GameBlasts\' collection of free 2 player games. Share a keyboard, compete side-by-side and settle the score in dozens of exciting two-player browser games. No download, no app, no login, just open a game and go head to head instantly.',
     keywords: '2 player games online, two player games free, 2 player browser games, multiplayer games no download, games for 2 players',
     about: {
       what: '2 player games are games designed to be played by two people simultaneously, usually sharing a single keyboard or device. They include competitive games where players battle each other and co-operative games where they work together.',
       best: 'GameBlasts has fighting games, sports games, racing games and unique competitive challenges all built for 2 players on one screen.',
       mobile: 'Some 2 player games work on mobile with split-screen touch controls. Most are optimised for desktop keyboard play.',
-      free: 'All 2 player games on GameBlasts are free — double the fun, zero cost.',
+      free: 'All 2 player games on GameBlasts are free, double the fun, zero cost.',
     },
     faqs: [
       { q: 'Are the 2 player games on GameBlasts free?', a: 'Yes, all 2 player games are completely free.' },
@@ -169,10 +169,10 @@ const CATEGORY_META = {
     title: 'Free Shooting Games - Play Online No Download | GameBlasts',
     h1: 'Free Shooting Games Online',
     metaDescription: 'Play free shooting games online on GameBlasts. Aim, shoot and survive in browser shooting games with no download or login required.',
-    intro: 'Lock and load with GameBlasts\' collection of free shooting games. From top-down shooters to first-person target games, our shooting category delivers intense gameplay right in your browser. Take aim, test your precision and rack up the highest score — no download, no login, just play.',
+    intro: 'Lock and load with GameBlasts\' collection of free shooting games. From top-down shooters to first-person target games, our shooting category delivers intense gameplay right in your browser. Take aim, test your precision and rack up the highest score, no download, no login, just play.',
     keywords: 'free shooting games, shooting games online, browser shooting games, shooting games no download, fps games browser',
     about: {
-      what: 'Shooting games challenge players to aim and fire at targets — enemies, objects or moving obstacles. Sub-genres include first-person shooters, top-down shooters, tower defence games and archery/target shooting games.',
+      what: 'Shooting games challenge players to aim and fire at targets, enemies, objects or moving obstacles. Sub-genres include first-person shooters, top-down shooters, tower defence games and archery/target shooting games.',
       best: 'Our shooting collection includes space shooters, zombie survival games, sniper challenges, archery games and intense battle games.',
       mobile: 'Yes, many shooting games on GameBlasts are touch-friendly and work on mobile browsers.',
       free: 'All shooting games are 100% free. Unlimited ammo, unlimited play.',
@@ -191,12 +191,12 @@ const CATEGORY_META = {
     title: 'Free Strategy Games - Play Online No Download | GameBlasts',
     h1: 'Free Strategy Games Online',
     metaDescription: 'Play free strategy games online on GameBlasts. Build, plan and conquer in browser strategy games with no download or login required.',
-    intro: 'Put your thinking cap on with GameBlasts\' collection of free strategy games. From city-building simulations to tower defence challenges and tactical war games, our strategy category rewards careful planning and smart decision-making. Play directly in your browser — no download required.',
+    intro: 'Put your thinking cap on with GameBlasts\' collection of free strategy games. From city-building simulations to tower defence challenges and tactical war games, our strategy category rewards careful planning and smart decision-making. Play directly in your browser, no download required.',
     keywords: 'free strategy games, strategy games online, browser strategy games, tower defence games free, strategy games no download',
     about: {
       what: 'Strategy games require players to plan their moves carefully, manage resources and think ahead to outmanoeuvre opponents or overcome challenges. Sub-genres include real-time strategy, turn-based strategy, tower defence, city builders and war games.',
       best: 'Our strategy collection includes tower defence games, kingdom builders, chess variants, war strategy games and resource management simulations.',
-      mobile: 'Yes, many strategy games are well-suited for mobile — tap to build, tap to command.',
+      mobile: 'Yes, many strategy games are well-suited for mobile, tap to build, tap to command.',
       free: 'All strategy games on GameBlasts are free. No premium required to reach the top.',
     },
     faqs: [
@@ -212,13 +212,13 @@ const CATEGORY_META = {
     name: 'Girls',
     title: 'Free Girls Games - Play Online No Download | GameBlasts',
     h1: 'Free Girls Games Online',
-    metaDescription: 'Play free girls games online on GameBlasts. Fashion, makeover, cooking and more — fun browser games for girls with no download or login required.',
-    intro: 'Explore GameBlasts\' collection of free girls games featuring fashion, makeover, cooking, decoration and more. Whether you love designing outfits, creating beautiful looks or running your own virtual restaurant, our games collection has something fun for everyone — playable directly in your browser.',
+    metaDescription: 'Play free girls games online on GameBlasts. Fashion, makeover, cooking and more. Fun browser games for girls with no download or login required.',
+    intro: 'Explore GameBlasts\' collection of free girls games featuring fashion, makeover, cooking, decoration and more. Whether you love designing outfits, creating beautiful looks or running your own virtual restaurant, our games collection has something fun for everyone, playable directly in your browser.',
     keywords: 'free girls games, girls games online, fashion games online, makeover games browser, girls games no download',
     about: {
       what: 'Girls games typically focus on creativity, fashion, cooking, decoration and social simulation. They include dress-up games, makeover games, cooking challenges, home decoration simulators and princess adventure games.',
       best: 'Our girls games collection includes fashion design, hair salon games, cooking games, wedding planning and creative makeover challenges.',
-      mobile: 'Yes! Girls games are perfect on mobile — touch to style, tap to create.',
+      mobile: 'Yes! Girls games are perfect on mobile, touch to style, tap to create.',
       free: 'All girls games on GameBlasts are completely free.',
     },
     faqs: [
@@ -322,6 +322,8 @@ export default function CategoryPage({ meta, initialGames, initialTotal, initial
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.metaDescription} />
         <meta property="og:image" content="https://gameblasts.com/logo.png" />
+        <meta property="og:image:width" content="1266" />
+        <meta property="og:image:height" content="300" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="GameBlasts" />

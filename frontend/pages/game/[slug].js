@@ -25,7 +25,7 @@ export default function GamePage({ game, related }) {
   const canonicalUrl = `https://gameblasts.com/game/${canonicalSlug}`
   const seoTitle = `${game.title} - Play Free Online | GameBlasts`
   const seoDescription = game.description
-    ? game.description.slice(0, 160)
+    ? game.description.replace(/&[a-z]+;/gi, ' ').replace(/\s+/g, ' ').trim().slice(0, 155)
     : `Play ${game.title} free online on GameBlasts. No download or login required. Instant browser gameplay.`
 
   return (
@@ -53,6 +53,24 @@ export default function GamePage({ game, related }) {
         <meta name="twitter:image" content={game.thumb} />
 
         <link rel="canonical" href={canonicalUrl} />
+        
+        {/* Structured Data (JSON-LD) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "VideoGame",
+              "name": game.title,
+              "description": seoDescription,
+              "image": game.thumb,
+              "url": canonicalUrl,
+              "applicationCategory": "Game",
+              "genre": game.category || "Casual",
+              "playMode": "SinglePlayer"
+            })
+          }}
+        />
       </Head>
 
       <Navbar />
@@ -73,7 +91,7 @@ export default function GamePage({ game, related }) {
 
       {/* SEO H1 — crawlable game title */}
       <div className="game-h1-bar">
-        <h1>{game.title} — Play Free Online</h1>
+        <h1>{game.title} - Play Free Online</h1>
       </div>
 
       {/* Game iframe */}
@@ -128,7 +146,7 @@ export default function GamePage({ game, related }) {
         <section className="game-content-section">
           <h2>Game Features</h2>
           <ul className="game-features-list">
-            <li>✅ Free to play — no purchase required</li>
+            <li>✅ Free to play - no purchase required</li>
             <li>✅ No download or installation needed</li>
             <li>✅ Play instantly in your browser</li>
             <li>✅ No login or account required</li>
@@ -144,7 +162,7 @@ export default function GamePage({ game, related }) {
           <p>
             {game.description
               ? `${game.title} is a free browser game you can play instantly on GameBlasts. ${game.description.slice(0, 200)}${game.description.length > 200 ? '...' : ''}`
-              : `${game.title} is a free online game available on GameBlasts. Click the game area above to start playing. Use your mouse or keyboard controls as indicated in the game. No download or login is required — just click and play.`}
+              : `${game.title} is a free online game available on GameBlasts. Click the game area above to start playing. Use your mouse or keyboard controls as indicated in the game. No download or login is required - just click and play.`}
           </p>
           <p style={{ marginTop: '12px', color: 'var(--text2)', fontSize: '14px' }}>
             Tip: Click the <strong>Fullscreen</strong> button above for the best playing experience. Works on desktop and mobile browsers.

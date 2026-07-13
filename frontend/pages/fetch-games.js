@@ -95,7 +95,7 @@ export default function FetchGamesPage() {
         margin: '0 auto',
       }}>
         <h1 style={{ fontSize: '24px', marginBottom: '8px', color: '#e94560' }}>
-          🎮 GameZone — Backend DB Setup
+          🎮 GameZone - Backend DB Setup
         </h1>
         <p style={{ color: '#a0a0b0', marginBottom: '32px', fontSize: '14px' }}>
           Fetch games from GameMonetize and save them securely to Python backend SQLite Database.
