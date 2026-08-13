@@ -1,16 +1,57 @@
 import Link from 'next/link'
 
+const FOOTER_LINKS = [
+  {
+    title: 'Explore',
+    links: [
+      { href: '/games', label: 'All Games' },
+      { href: '/top-games', label: 'Top Games' },
+      { href: '/new-games', label: 'New Games' },
+      { href: '/blog', label: 'Blog' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { href: '/about', label: 'About' },
+      { href: '/contact', label: 'Contact' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { href: '/privacy', label: 'Privacy Policy' },
+      { href: '/terms', label: 'Terms of Service' },
+    ],
+  },
+]
+
 export default function Footer() {
+  const year = new Date().getFullYear()
+
   return (
-    <footer style={{ borderTop: '1px solid var(--border)', padding: '24px', marginTop: '40px', fontSize: '13px', color: '#a0a0b0', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-      <Link href="/games" style={{ color: '#a0a0b0' }}>All Games</Link>
-      <Link href="/top-games" style={{ color: '#a0a0b0' }}>Top Games</Link>
-      <Link href="/new-games" style={{ color: '#a0a0b0' }}>New Games</Link>
-      <Link href="/blog" style={{ color: '#a0a0b0' }}>Blog</Link>
-      <Link href="/about" style={{ color: '#a0a0b0' }}>About</Link>
-      <Link href="/contact" style={{ color: '#a0a0b0' }}>Contact</Link>
-      <Link href="/privacy" style={{ color: '#a0a0b0' }}>Privacy Policy</Link>
-      <Link href="/terms" style={{ color: '#a0a0b0' }}>Terms of Service</Link>
+    <footer className="site-footer">
+      <div className="footer-inner">
+        <div className="footer-brand">
+          <img src="/logo.avif" alt="GameZone" className="footer-logo" />
+          <p>Play free online games instantly in your browser — no download, no login required.</p>
+        </div>
+
+        <div className="footer-columns">
+          {FOOTER_LINKS.map(col => (
+            <div className="footer-col" key={col.title}>
+              <h3>{col.title}</h3>
+              {col.links.map(link => (
+                <Link key={link.href} href={link.href}>{link.label}</Link>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        &copy; {year} GameZone. All rights reserved.
+      </div>
     </footer>
   )
 }

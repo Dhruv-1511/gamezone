@@ -50,6 +50,11 @@ export default function BlogPostPage({ post }) {
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="GameZone" />
+        <meta property="og:image" content={`${SITE_URL}/logo.avif`} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={`${SITE_URL}/logo.avif`} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(articleSchema) }} />
       </Head>

@@ -226,6 +226,33 @@ export default function HomePage({ dbEmpty, syncCount, games, total, totalPages,
         </div>
       )}
 
+      {showHero && (
+        <div className="page-container" style={{ paddingBottom: 0 }}>
+          <div className="features-section">
+            <div className="feature-card">
+              <div className="feature-icon">⚡</div>
+              <h3>Instant Play</h3>
+              <p>Jump straight into any game in your browser — no downloads or installs.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">🔒</div>
+              <h3>No Login Needed</h3>
+              <p>Play every game for free without creating an account or signing in.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">📱</div>
+              <h3>Works Everywhere</h3>
+              <p>Fully playable on desktop, tablet, and mobile browsers.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">🕹️</div>
+              <h3>{total || '2000'}+ Games</h3>
+              <p>A huge library across 17 categories, updated with new games regularly.</p>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="homepage-layout">
         <main className="homepage-main">
           <div className="page-container">

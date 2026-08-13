@@ -20,6 +20,11 @@ export default function BlogIndexPage() {
         <meta property="og:description" content={metaDescription} />
         <meta property="og:url" content={`${SITE_URL}/blog`} />
         <meta property="og:site_name" content="GameZone" />
+        <meta property="og:image" content={`${SITE_URL}/logo.avif`} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={`${SITE_URL}/logo.avif`} />
       </Head>
 
       <Navbar />

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { SITE_URL } from '../lib/seo'
@@ -14,6 +15,15 @@ export default function PrivacyPage() {
         <meta name="description" content={metaDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href={`${SITE_URL}/privacy`} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:url" content={`${SITE_URL}/privacy`} />
+        <meta property="og:site_name" content="GameZone" />
+        <meta property="og:image" content={`${SITE_URL}/logo.avif`} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={`${SITE_URL}/logo.avif`} />
       </Head>
 
       <Navbar />
@@ -44,7 +54,7 @@ export default function PrivacyPage() {
 
         <h2 style={{ fontSize: '18px', marginTop: '24px', marginBottom: '8px' }}>Contact</h2>
         <p style={{ color: '#a0a0b0', fontSize: '15px', lineHeight: 1.7 }}>
-          Questions about this policy? Visit our <a href="/contact" style={{ color: '#e94560' }}>Contact page</a>.
+          Questions about this policy? Visit our <Link href="/contact" style={{ color: '#e94560' }}>Contact page</Link>.
         </p>
       </div>
 

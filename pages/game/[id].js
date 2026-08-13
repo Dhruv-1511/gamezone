@@ -73,7 +73,7 @@ export default function GamePage({ game, related }) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: category.name, item: `${SITE_URL}/?category=${category.id}` },
+      { '@type': 'ListItem', position: 2, name: category.name, item: `${SITE_URL}/category/${category.id}` },
       { '@type': 'ListItem', position: 3, name: game.title, item: canonicalUrl },
     ],
   }
@@ -120,7 +120,7 @@ export default function GamePage({ game, related }) {
       >
         <Link href="/" style={{ color: '#e94560' }}>Home</Link>
         {' '} / {' '}
-        <Link href={`/?category=${category.id}`} style={{ color: '#a0a0b0' }}>
+        <Link href={`/category/${category.id}`} style={{ color: '#a0a0b0' }}>
           {game.category || 'Games'}
         </Link>
         {' '} / {game.title}

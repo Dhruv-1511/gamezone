@@ -1,5 +1,6 @@
 import { SITE_URL } from '../lib/seo'
 import { CATEGORIES } from '../lib/categories'
+import { BLOG_POSTS } from '../lib/blogPosts'
 import { fetchWithTimeout } from '../lib/fetchTimeout'
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
@@ -26,9 +27,20 @@ export async function getServerSideProps({ res }) {
 
   const entries = [
     urlEntry(`${SITE_URL}/`, { changefreq: 'daily', priority: '1.0' }),
+    urlEntry(`${SITE_URL}/games`, { changefreq: 'weekly', priority: '0.8' }),
+    urlEntry(`${SITE_URL}/top-games`, { changefreq: 'daily', priority: '0.8' }),
+    urlEntry(`${SITE_URL}/new-games`, { changefreq: 'daily', priority: '0.8' }),
     ...CATEGORIES.filter(c => c.id !== 'all').map(c =>
-      urlEntry(`${SITE_URL}/?category=${c.id}`, { changefreq: 'daily', priority: '0.7' })
+      urlEntry(`${SITE_URL}/category/${c.id}`, { changefreq: 'daily', priority: '0.7' })
     ),
+    urlEntry(`${SITE_URL}/blog`, { changefreq: 'weekly', priority: '0.6' }),
+    ...BLOG_POSTS.map(p =>
+      urlEntry(`${SITE_URL}/blog/${p.slug}`, { changefreq: 'monthly', priority: '0.5' })
+    ),
+    urlEntry(`${SITE_URL}/about`, { changefreq: 'monthly', priority: '0.4' }),
+    urlEntry(`${SITE_URL}/contact`, { changefreq: 'monthly', priority: '0.4' }),
+    urlEntry(`${SITE_URL}/privacy`, { changefreq: 'yearly', priority: '0.3' }),
+    urlEntry(`${SITE_URL}/terms`, { changefreq: 'yearly', priority: '0.3' }),
     ...gameIds.map(id =>
       urlEntry(`${SITE_URL}/game/${id}`, { changefreq: 'weekly', priority: '0.6' })
     ),

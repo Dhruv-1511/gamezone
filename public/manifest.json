@@ -1,0 +1,17 @@
+{
+  "name": "GameZone - Free Online Games",
+  "short_name": "GameZone",
+  "description": "Play 700+ free online games instantly in your browser — action, puzzle, racing, sports and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f1a",
+  "theme_color": "#0f0f1a",
+  "icons": [
+    {
+      "src": "/icon-512.jpg",
+      "sizes": "1024x1024",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

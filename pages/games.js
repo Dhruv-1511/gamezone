@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { CATEGORIES } from '../lib/categories'
+import { POPULAR_SEARCHES } from '../lib/popularSearches'
 import { SITE_URL, jsonLd } from '../lib/seo'
 
 const metaTitle = 'Browse All Games - GameZone'
@@ -33,6 +34,11 @@ export default function GamesHubPage() {
         <meta property="og:description" content={metaDescription} />
         <meta property="og:url" content={`${SITE_URL}/games`} />
         <meta property="og:site_name" content="GameZone" />
+        <meta property="og:image" content={`${SITE_URL}/logo.avif`} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={`${SITE_URL}/logo.avif`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(itemListSchema) }} />
       </Head>
 
@@ -64,6 +70,18 @@ export default function GamesHubPage() {
             >
               <div style={{ fontSize: '20px', marginBottom: '4px' }}>{cat.icon} {cat.name}</div>
               <div style={{ fontSize: '13px', color: '#a0a0b0' }}>Play free {cat.name.toLowerCase()} games</div>
+            </Link>
+          ))}
+        </div>
+
+        <h2 className="section-title" style={{ marginTop: '48px' }}>Popular Searches</h2>
+        <p style={{ color: '#a0a0b0', fontSize: '14px', lineHeight: 1.6, marginBottom: '16px' }}>
+          Some of the most common ways people look for free browser games — jump straight to the closest match below.
+        </p>
+        <div className="search-tags">
+          {POPULAR_SEARCHES.map(item => (
+            <Link key={item.label} href={item.href} className="search-tag">
+              {item.label}
             </Link>
           ))}
         </div>

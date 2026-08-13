@@ -191,9 +191,27 @@ export default function CategoryPage({ slug, games, total, totalPages, page }) {
                 {meta.why && (
                   <>
                     <h2 className="section-title">Why Play {meta.name} Games?</h2>
-                    <p style={{ color: '#a0a0b0', fontSize: '14px', lineHeight: 1.6, marginBottom: '20px' }}>
+                    <p style={{ color: '#a0a0b0', fontSize: '14px', lineHeight: 1.6, marginBottom: '12px' }}>
                       {meta.why}
                     </p>
+                    {meta.related && meta.related.length > 0 && (
+                      <p style={{ color: '#a0a0b0', fontSize: '14px', lineHeight: 1.6, marginBottom: '20px' }}>
+                        Also check out{' '}
+                        {meta.related.map((id, i) => {
+                          const relCat = CATEGORIES.find(c => c.id === id)
+                          if (!relCat) return null
+                          return (
+                            <span key={id}>
+                              {i > 0 && ' and '}
+                              <Link href={`/category/${id}`} style={{ color: '#e94560' }}>
+                                {relCat.name} Games
+                              </Link>
+                            </span>
+                          )
+                        })}
+                        .
+                      </p>
+                    )}
                   </>
                 )}
                 {meta.tips && meta.tips.length > 0 && (

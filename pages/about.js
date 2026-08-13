@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { SITE_URL } from '../lib/seo'
@@ -18,6 +19,11 @@ export default function AboutPage() {
         <meta property="og:description" content={metaDescription} />
         <meta property="og:url" content={`${SITE_URL}/about`} />
         <meta property="og:site_name" content="GameZone" />
+        <meta property="og:image" content={`${SITE_URL}/logo.avif`} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={`${SITE_URL}/logo.avif`} />
       </Head>
 
       <Navbar />
@@ -35,7 +41,7 @@ export default function AboutPage() {
           how we're able to keep every game free to play.
         </p>
         <p style={{ color: '#a0a0b0', fontSize: '15px', lineHeight: 1.7 }}>
-          Have a question or feedback? Visit our <a href="/contact" style={{ color: '#e94560' }}>Contact page</a>.
+          Have a question or feedback? Visit our <Link href="/contact" style={{ color: '#e94560' }}>Contact page</Link>.
         </p>
       </div>
 
