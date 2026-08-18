@@ -2,10 +2,19 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import { SITE_URL } from '../lib/seo'
+import { SITE_URL, jsonLd } from '../lib/seo'
 
 const metaTitle = 'About GameZone - Free Online Games'
 const metaDescription = 'GameZone is a free browser gaming site with 700+ instant-play games across action, puzzle, racing, sports and more. No download, no login required.'
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: 'About', item: `${SITE_URL}/about` },
+  ],
+}
 
 export default function AboutPage() {
   return (
@@ -24,6 +33,7 @@ export default function AboutPage() {
         <meta name="twitter:title" content={metaTitle} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={`${SITE_URL}/logo.avif`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }} />
       </Head>
 
       <Navbar />

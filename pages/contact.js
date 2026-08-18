@@ -1,13 +1,22 @@
 import Head from 'next/head'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import { SITE_URL } from '../lib/seo'
+import { SITE_URL, jsonLd } from '../lib/seo'
 
 const metaTitle = 'Contact GameZone'
 const metaDescription = 'Get in touch with the GameZone team for support, feedback, or business inquiries.'
 
 // TODO: replace with your real support address before deploying.
 const CONTACT_EMAIL = 'support@yourdomain.com'
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Contact', item: `${SITE_URL}/contact` },
+  ],
+}
 
 export default function ContactPage() {
   return (
@@ -26,6 +35,7 @@ export default function ContactPage() {
         <meta name="twitter:title" content={metaTitle} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={`${SITE_URL}/logo.avif`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }} />
       </Head>
 
       <Navbar />

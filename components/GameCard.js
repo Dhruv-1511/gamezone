@@ -12,6 +12,9 @@ export default function GameCard({ game }) {
           alt={game.title}
           onError={() => setImgErr(true)}
           loading="lazy"
+          decoding="async"
+          width="512"
+          height="384"
         />
         <div className="game-card-info">
           <div className="game-card-title">{game.title}</div>

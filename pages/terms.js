@@ -2,10 +2,19 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import { SITE_URL } from '../lib/seo'
+import { SITE_URL, jsonLd } from '../lib/seo'
 
 const metaTitle = 'Terms of Service - GameZone'
 const metaDescription = 'Terms of service for using GameZone, our free online games platform.'
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Terms of Service', item: `${SITE_URL}/terms` },
+  ],
+}
 
 export default function TermsPage() {
   return (
@@ -24,6 +33,7 @@ export default function TermsPage() {
         <meta name="twitter:title" content={metaTitle} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={`${SITE_URL}/logo.avif`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }} />
       </Head>
 
       <Navbar />

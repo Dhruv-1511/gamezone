@@ -167,7 +167,7 @@ export default function GamePage({ game, related }) {
 
       {/* Square Ad Below Details */}
       <div style={{ marginTop: '20px', marginBottom: '10px' }}>
-        <AdBanner adKey="7475e51389b2bae93ec922165c68c873" width="300" height="250" />
+        <AdBanner adKey="7475e51389b2bae93ec922165c68c873" width="300" height="250" lazy />
       </div>
 
       {/* Related Games */}

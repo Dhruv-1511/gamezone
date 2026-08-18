@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 import GameCard from '../components/GameCard'
 import AdBanner from '../components/AdBanner'
 import Footer from '../components/Footer'
+import Pagination from '../components/Pagination'
 import { CATEGORIES } from '../lib/categories'
 import { SITE_URL, jsonLd, truncate } from '../lib/seo'
 import { fetchWithTimeout } from '../lib/fetchTimeout'
@@ -78,9 +79,12 @@ export default function HomePage({ dbEmpty, syncCount, games, total, totalPages,
     router.push({ pathname: '/', query: { category: cat, page: 1 } })
   }
 
-  function setPage(p) {
-    router.push({ pathname: '/', query: { category: activeCategory, page: p, ...(search ? { search } : {}) } })
-    window.scrollTo(0, 0)
+  function pageHref(p) {
+    const params = new URLSearchParams()
+    params.set('category', activeCategory)
+    if (search) params.set('search', search)
+    params.set('page', String(p))
+    return `/?${params.toString()}`
   }
 
   const activeCategoryMeta = CATEGORIES.find(c => c.id === activeCategory)
@@ -299,32 +303,11 @@ export default function HomePage({ dbEmpty, syncCount, games, total, totalPages,
                 {games.length > 0 && (
                   <div style={{ marginTop: '30px', marginBottom: '20px' }}>
                      {/* Square Ad before Pagination */}
-                     <AdBanner adKey="7475e51389b2bae93ec922165c68c873" width="300" height="250" />
+                     <AdBanner adKey="7475e51389b2bae93ec922165c68c873" width="300" height="250" lazy />
                   </div>
                 )}
 
-                {totalPages > 1 && (
-                  <div className="pagination">
-                    <button className="page-btn" onClick={() => setPage(currentPage - 1)} disabled={currentPage <= 1}>
-                      ← Prev
-                    </button>
-                    {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-                      let p
-                      if (totalPages <= 5) p = i + 1
-                      else if (currentPage <= 3) p = i + 1
-                      else if (currentPage >= totalPages - 2) p = totalPages - 4 + i
-                      else p = currentPage - 2 + i
-                      return (
-                        <button key={p} className={`page-btn ${p === currentPage ? 'active' : ''}`} onClick={() => setPage(p)}>
-                          {p}
-                        </button>
-                      )
-                    })}
-                    <button className="page-btn" onClick={() => setPage(currentPage + 1)} disabled={currentPage >= totalPages}>
-                      Next →
-                    </button>
-                  </div>
-                )}
+                <Pagination currentPage={currentPage} totalPages={totalPages} buildHref={pageHref} />
 
                 {showHero && (
                   <div style={{ marginTop: '40px', maxWidth: '900px' }}>
@@ -361,9 +344,9 @@ export default function HomePage({ dbEmpty, syncCount, games, total, totalPages,
 
         {!dbEmpty && (
           <div className="ad-sidebar">
-            <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" />
+            <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" lazy />
             <div style={{ marginTop: '20px' }}>
-              <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" />
+              <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" lazy />
             </div>
           </div>
         )}

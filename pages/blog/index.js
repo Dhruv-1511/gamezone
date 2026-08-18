@@ -3,10 +3,19 @@ import Link from 'next/link'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import { BLOG_POSTS } from '../../lib/blogPosts'
-import { SITE_URL } from '../../lib/seo'
+import { SITE_URL, jsonLd } from '../../lib/seo'
 
 const metaTitle = 'Blog - GameZone'
 const metaDescription = 'Guides and tips for browser gaming — how to play games online, picking a game category, and more from the GameZone blog.'
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+  ],
+}
 
 export default function BlogIndexPage() {
   return (
@@ -25,6 +34,7 @@ export default function BlogIndexPage() {
         <meta name="twitter:title" content={metaTitle} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={`${SITE_URL}/logo.avif`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }} />
       </Head>
 
       <Navbar />

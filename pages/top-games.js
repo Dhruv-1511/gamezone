@@ -128,9 +128,9 @@ export default function TopGamesPage({ games }) {
         </main>
 
         <div className="ad-sidebar">
-          <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" />
+          <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" lazy />
           <div style={{ marginTop: '20px' }}>
-            <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" />
+            <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" lazy />
           </div>
         </div>
       </div>

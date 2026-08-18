@@ -23,6 +23,15 @@ export default function GamesHubPage() {
     })),
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Browse All Games', item: `${SITE_URL}/games` },
+    ],
+  }
+
   return (
     <>
       <Head>
@@ -40,6 +49,7 @@ export default function GamesHubPage() {
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={`${SITE_URL}/logo.avif`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(itemListSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }} />
       </Head>
 
       <Navbar />

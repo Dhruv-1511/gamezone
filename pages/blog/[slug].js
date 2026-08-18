@@ -37,6 +37,16 @@ export default function BlogPostPage({ post }) {
     mainEntityOfPage: canonicalUrl,
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: canonicalUrl },
+    ],
+  }
+
   return (
     <>
       <Head>
@@ -57,6 +67,7 @@ export default function BlogPostPage({ post }) {
         <meta name="twitter:image" content={`${SITE_URL}/logo.avif`} />
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(articleSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }} />
       </Head>
 
       <Navbar />

@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import Navbar from '../../components/Navbar'
 import GameCard from '../../components/GameCard'
 import AdBanner from '../../components/AdBanner'
 import Footer from '../../components/Footer'
+import Pagination from '../../components/Pagination'
 import { CATEGORIES } from '../../lib/categories'
 import { SITE_URL, jsonLd, truncate } from '../../lib/seo'
 import { fetchWithTimeout } from '../../lib/fetchTimeout'
@@ -38,7 +38,6 @@ export async function getServerSideProps({ params, query, res }) {
 }
 
 export default function CategoryPage({ slug, games, total, totalPages, page }) {
-  const router = useRouter()
   const meta = CATEGORIES.find(c => c.id === slug)
   const currentPage = page || 1
   const pageSuffix = currentPage > 1 ? ` - Page ${currentPage}` : ''
@@ -50,9 +49,8 @@ export default function CategoryPage({ slug, games, total, totalPages, page }) {
   )
   const canonicalUrl = `${SITE_URL}/category/${slug}${currentPage > 1 ? `?page=${currentPage}` : ''}`
 
-  function setPage(p) {
-    router.push(`/category/${slug}${p > 1 ? `?page=${p}` : ''}`)
-    window.scrollTo(0, 0)
+  function pageHref(p) {
+    return `/category/${slug}${p > 1 ? `?page=${p}` : ''}`
   }
 
   const breadcrumbSchema = {
@@ -159,32 +157,11 @@ export default function CategoryPage({ slug, games, total, totalPages, page }) {
 
             {games.length > 0 && (
               <div style={{ marginTop: '30px', marginBottom: '20px' }}>
-                <AdBanner adKey="7475e51389b2bae93ec922165c68c873" width="300" height="250" />
+                <AdBanner adKey="7475e51389b2bae93ec922165c68c873" width="300" height="250" lazy />
               </div>
             )}
 
-            {totalPages > 1 && (
-              <div className="pagination">
-                <button className="page-btn" onClick={() => setPage(currentPage - 1)} disabled={currentPage <= 1}>
-                  ← Prev
-                </button>
-                {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-                  let p
-                  if (totalPages <= 5) p = i + 1
-                  else if (currentPage <= 3) p = i + 1
-                  else if (currentPage >= totalPages - 2) p = totalPages - 4 + i
-                  else p = currentPage - 2 + i
-                  return (
-                    <button key={p} className={`page-btn ${p === currentPage ? 'active' : ''}`} onClick={() => setPage(p)}>
-                      {p}
-                    </button>
-                  )
-                })}
-                <button className="page-btn" onClick={() => setPage(currentPage + 1)} disabled={currentPage >= totalPages}>
-                  Next →
-                </button>
-              </div>
-            )}
+            <Pagination currentPage={currentPage} totalPages={totalPages} buildHref={pageHref} />
 
             {(meta.why || meta.tips) && (
               <div style={{ marginTop: '40px', maxWidth: '900px' }}>
@@ -230,9 +207,9 @@ export default function CategoryPage({ slug, games, total, totalPages, page }) {
         </main>
 
         <div className="ad-sidebar">
-          <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" />
+          <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" lazy />
           <div style={{ marginTop: '20px' }}>
-            <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" />
+            <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" lazy />
           </div>
         </div>
       </div>
