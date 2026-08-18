@@ -33,11 +33,21 @@ const nextConfig = {
       'strategy-games': 'strategy',
       'girls-games': 'girls',
     }
-    return Object.entries(oldToNewCategory).map(([oldSlug, categoryId]) => ({
+    const categoryRedirects = Object.entries(oldToNewCategory).map(([oldSlug, categoryId]) => ({
       source: `/${oldSlug}`,
       destination: `/category/${categoryId}`,
       permanent: true,
     }))
+
+    // Old game URLs were slug-suffixed (e.g. /game/speed-master-cars-67100);
+    // the trailing number is the real numeric id used by the current /game/[id] route.
+    const gameSlugRedirect = {
+      source: '/game/:slug-:id(\\d+)',
+      destination: '/game/:id',
+      permanent: true,
+    }
+
+    return [...categoryRedirects, gameSlugRedirect]
   },
 }
 
