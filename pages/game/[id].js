@@ -110,8 +110,8 @@ export default function GamePage({ game, related }) {
       <Navbar />
 
       {/* Top Banner Ads */}
-      <AdBanner adKey="cb8a86192cbd60e68342f7c1326fe438" width="728" height="90" className="ad-desktop" />
-      <AdBanner adKey="e81a99924f7e6dbb9f55755c8d179f31" width="320" height="50" className="ad-mobile" />
+      <AdBanner adKey="accc346ac85ebb23eaf24024f7dfe74a" width="728" height="90" className="ad-desktop" />
+      <AdBanner adKey="8e72acdcd4881b0f2455a7f10f8cb1c6" width="320" height="50" className="ad-mobile" />
 
       {/* Breadcrumb */}
       <nav
@@ -167,7 +167,7 @@ export default function GamePage({ game, related }) {
 
       {/* Square Ad Below Details */}
       <div style={{ marginTop: '20px', marginBottom: '10px' }}>
-        <AdBanner adKey="7475e51389b2bae93ec922165c68c873" width="300" height="250" lazy />
+        <AdBanner adKey="8c14d8d28f5a663ab90c9d1e1d08b4a1" width="300" height="250" lazy />
       </div>
 
       {/* Related Games */}

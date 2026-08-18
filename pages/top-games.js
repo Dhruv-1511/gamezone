@@ -79,8 +79,8 @@ export default function TopGamesPage({ games }) {
 
       <Navbar />
 
-      <AdBanner adKey="cb8a86192cbd60e68342f7c1326fe438" width="728" height="90" className="ad-desktop" />
-      <AdBanner adKey="e81a99924f7e6dbb9f55755c8d179f31" width="320" height="50" className="ad-mobile" />
+      <AdBanner adKey="accc346ac85ebb23eaf24024f7dfe74a" width="728" height="90" className="ad-desktop" />
+      <AdBanner adKey="8e72acdcd4881b0f2455a7f10f8cb1c6" width="320" height="50" className="ad-mobile" />
 
       <nav
         aria-label="Breadcrumb"
@@ -128,9 +128,9 @@ export default function TopGamesPage({ games }) {
         </main>
 
         <div className="ad-sidebar">
-          <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" lazy />
+          <AdBanner adKey="5dc031c1f40c4cbf27b0c179a0be275d" width="160" height="600" lazy />
           <div style={{ marginTop: '20px' }}>
-            <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" lazy />
+            <AdBanner adKey="5dc031c1f40c4cbf27b0c179a0be275d" width="160" height="600" lazy />
           </div>
         </div>
       </div>

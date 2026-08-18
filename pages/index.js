@@ -207,8 +207,8 @@ export default function HomePage({ dbEmpty, syncCount, games, total, totalPages,
       <Navbar />
 
       {/* Top Banner Ads */}
-      <AdBanner adKey="cb8a86192cbd60e68342f7c1326fe438" width="728" height="90" className="ad-desktop" />
-      <AdBanner adKey="e81a99924f7e6dbb9f55755c8d179f31" width="320" height="50" className="ad-mobile" />
+      <AdBanner adKey="accc346ac85ebb23eaf24024f7dfe74a" width="728" height="90" className="ad-desktop" />
+      <AdBanner adKey="8e72acdcd4881b0f2455a7f10f8cb1c6" width="320" height="50" className="ad-mobile" />
 
       <div className="categories-bar">
         <button className="cat-btn active" onClick={() => setCategory('all')}>
@@ -303,7 +303,7 @@ export default function HomePage({ dbEmpty, syncCount, games, total, totalPages,
                 {games.length > 0 && (
                   <div style={{ marginTop: '30px', marginBottom: '20px' }}>
                      {/* Square Ad before Pagination */}
-                     <AdBanner adKey="7475e51389b2bae93ec922165c68c873" width="300" height="250" lazy />
+                     <AdBanner adKey="8c14d8d28f5a663ab90c9d1e1d08b4a1" width="300" height="250" lazy />
                   </div>
                 )}
 
@@ -344,9 +344,9 @@ export default function HomePage({ dbEmpty, syncCount, games, total, totalPages,
 
         {!dbEmpty && (
           <div className="ad-sidebar">
-            <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" lazy />
+            <AdBanner adKey="5dc031c1f40c4cbf27b0c179a0be275d" width="160" height="600" lazy />
             <div style={{ marginTop: '20px' }}>
-              <AdBanner adKey="25663cfe779cf8113cf8b57b80a6b5ca" width="160" height="600" lazy />
+              <AdBanner adKey="5dc031c1f40c4cbf27b0c179a0be275d" width="160" height="600" lazy />
             </div>
           </div>
         )}
